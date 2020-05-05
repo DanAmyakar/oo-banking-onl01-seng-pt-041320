@@ -43,12 +43,14 @@ class Transfer
   end
   
   def reverse_transfer
-    a = self.amount
-    b = self.sender
-    c = self.receiver
-    b.deposit(a)
-    c.withdrawl(a)
-    @@all.last.status = 'reversed'
+    if @status == 'complete'
+      a = self.amount
+      b = self.sender
+      c = self.receiver
+      b.deposit(a)
+      c.withdrawl(a)
+      @@all.last.status = 'reversed'
+    end
   end
   
 end
