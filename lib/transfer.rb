@@ -1,3 +1,5 @@
+require 'pry'
+
 class Transfer
   
   attr_accessor :status
@@ -31,6 +33,6 @@ class Transfer
     end
   end
   
-  
+  binding.pry
   
 end
