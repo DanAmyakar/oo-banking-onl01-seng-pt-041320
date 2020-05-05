@@ -22,6 +22,11 @@ class BankAccount
     self.balance
   end
   
+  def withdrawl(qnty_to_withdrawl)
+    self.balance -= qnty_to_withdrawl
+    self.balance
+  end
+  
   def display_balance
     'Your balance is $' + @balance.to_s + '.'
   end
