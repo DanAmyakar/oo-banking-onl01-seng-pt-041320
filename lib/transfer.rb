@@ -36,7 +36,7 @@ class Transfer
         @receiver.deposit(@amount)
         @status = 'complete'
       end
-    else (sender == nil || @sneder.balance.to_i < @amount.to_i)
+    else (sender == nil || @sender.balance.to_i < @amount.to_i)
       "Transaction rejected. Please check your acount balance."
       @status = 'rejected'
       
