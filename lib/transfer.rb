@@ -24,6 +24,7 @@ class Transfer
     if self.valid?
       @sender.withdrawl(amount)
       @receiver.deposit(amount)
+      @status = 'complete'
     else
       "Transaction rejected. Please check your account balance."
       @status = 'rejected'
