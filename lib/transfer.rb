@@ -30,7 +30,7 @@ class Transfer
   end
   
   def execute_transaction
-    if @@all.include?{|xfer| xfer.status == 'pending'}
+    if @status == 'pending'
       if (self.valid? == true && sender.balance > @amount)
         self.sender.withdrawl(@amount)
         self.receiver.deposit(@amount)
