@@ -38,12 +38,17 @@ class Transfer
       end
     else
       self.status = 'rejected'
-      puts 'Transaction rejected. Please check your acount balance.'
+      'Transaction rejected. Please check your acount balance.'
     end
   end
   
   def reverse_transfer
-    @@all.last.sender
+    a = @@all.last.amount
+    b = @@all.last.sender
+    c = @@all.last.receiver
+    b.deposit(a)
+    c.withdrawl(a)
+    
   end
   
 end
