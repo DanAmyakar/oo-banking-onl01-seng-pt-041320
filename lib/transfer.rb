@@ -7,7 +7,7 @@ class Transfer
   @@all = []
   
   def initialize(sender, receiver, amount)
-    binding.pry
+    # binding.pry
     @sender = sender
     @receiver = receiver
     @amount = amount
