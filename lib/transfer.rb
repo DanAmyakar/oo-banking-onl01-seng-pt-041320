@@ -29,7 +29,7 @@ class Transfer
     valid_flag
   end
   
-  def execute_transaction
+  def execute_transfer
     if @@all == @@all.uniq
       if (self.valid? == true && sender.balance > amount) 
         @sender.withdrawl -= @amount
