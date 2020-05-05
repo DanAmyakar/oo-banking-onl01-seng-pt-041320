@@ -33,7 +33,7 @@ class Transfer
     if @@all == @@all.uniq
       if (self.valid? == true && sender.balance > amount) 
         @sender.withdrawl(@amount)
-        @receiver.deposite(@amount)
+        @receiver.deposit(@amount)
         @status = 'complete'
       else
         @status = 'rejected'
