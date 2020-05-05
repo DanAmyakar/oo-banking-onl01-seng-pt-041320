@@ -29,7 +29,5 @@ class BankAccount
     self.balance = 0
     self.status = 'closed'
   end
-  
-  binding.pry
 
 end
