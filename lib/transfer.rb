@@ -35,10 +35,10 @@ class Transfer
         self.sender.withdrawl(@amount)
         self.receiver.deposit(@amount)
         self.status = 'complete'
-      else
-        self.status = 'rejected'
-        puts 'Transaction rejected. Please check your acount balance.'
       end
+    else
+      self.status = 'rejected'
+      puts 'Transaction rejected. Please check your acount balance.'
     end
   end
   
