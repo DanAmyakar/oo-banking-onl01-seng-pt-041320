@@ -28,9 +28,6 @@ class Transfer
   end
   
   def execute_transaction
-    # ensures each xfer can only happen once
-    # must valid? both accounts
-    # upon a succesful xfer change status to complete
     if @@all.none?{|xfer| xfer == self}
       if self.valid? == true
         @sender.withdrawl -= @amount
@@ -38,7 +35,9 @@ class Transfer
         @status = 'complete'
       else
         @status = 'rejected'
-        ''
+        'Transaction rejected. Please check your acount balance.'
+      end
+    end
   end
   
 end
