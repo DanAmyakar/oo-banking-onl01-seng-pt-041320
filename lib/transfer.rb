@@ -21,8 +21,7 @@ class Transfer
   end
   
   def execute_transaction
-    self.valid?
-    if @@all.!include?{|xfer| xfer == self}
+    if self.valid?
       @sender.withdrawl(amount)
       @receiver.deposit(amount)
     else
