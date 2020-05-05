@@ -9,12 +9,20 @@ class Transfer
     @receiver = receiver
     @amount = amount
     @status = 'pending'
+    save
+  end
+  
+  def save
+    @@all << self
   end
   
   def valid?
     (sender.valid? && receiver.valid?) ? true : false
   end
   
-    
-
+  def execute_transaction
+    @sender.withdrawl(amount)
+    @receiver.deposite(amount)
+  end
+  
 end
