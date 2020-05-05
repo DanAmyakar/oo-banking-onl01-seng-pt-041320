@@ -17,14 +17,14 @@ class BankAccount
     @@all << self
   end
   
-  def deposit(qnty_to_deposite)
-    @balance += qnty_to_deposite
+  def deposit(qnty_to_deposit)
+    @balance = @balance + qnty_to_deposit
     @balance
   end
   
   def withdrawl(qnty_to_withdrawl)
-    self.balance -= qnty_to_withdrawl
-    self.balance
+    @balance = @balance  - qnty_to_withdrawl
+    @balance
   end
   
   def display_balance
