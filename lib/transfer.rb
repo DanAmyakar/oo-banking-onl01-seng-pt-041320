@@ -31,7 +31,7 @@ class Transfer
   
   def execute_transaction
     if @sender.balance > @amount
-      if @status != complete
+      if @status != 'complete'
         if self.valid? == true
           @sender.withdrawl(@amount)
           @receiver.deposit(@amount)
