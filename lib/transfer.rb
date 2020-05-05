@@ -43,7 +43,7 @@ class Transfer
   end
   
   def reverse_transfer
-    
+    @@all.last.sender
   end
   
 end
