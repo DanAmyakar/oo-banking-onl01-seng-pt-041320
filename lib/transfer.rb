@@ -4,7 +4,13 @@ class Transfer
   attr_reader
   @@all = []
   
-  def initialize
+  def initialize(sender, reciver, amount)
+    @sender = sender
+    @reciver = reciver
+    @amount = amount
+  end
+  
+  
     
 
 end
