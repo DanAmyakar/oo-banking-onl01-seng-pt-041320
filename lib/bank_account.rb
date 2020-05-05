@@ -1,3 +1,5 @@
+require 'pry'
+
 class BankAccount
 
   attr_accessor :balance, :status
@@ -20,6 +22,7 @@ class BankAccount
   end
   
   def valid?
+    binding.pry
     (self.balance > 0 && self.status = 'open') ? true : false
   end
   
