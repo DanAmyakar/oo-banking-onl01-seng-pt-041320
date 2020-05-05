@@ -32,8 +32,8 @@ class Transfer
   def execute_transaction
     if @@all == @@all.uniq
       if (self.valid? == true && sender.balance > amount) 
-        @sender.withdrawl -= @amount
-        @receiver.deposite += @amount
+        @sender.withdrawl(@amount)
+        @receiver.deposite(@amount)
         @status = 'complete'
       else
         @status = 'rejected'
