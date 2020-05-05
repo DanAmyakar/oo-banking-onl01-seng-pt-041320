@@ -1,16 +1,17 @@
 class Transfer
   
-  attr_accessor
-  attr_reader
+  attr_accessor :status
+  attr_reader :sender, :reciver, :amount
   @@all = []
   
   def initialize(sender, reciver, amount)
     @sender = sender
     @reciver = reciver
     @amount = amount
+    @status = 'pending'
   end
   
-  
+  def 
     
 
 end
