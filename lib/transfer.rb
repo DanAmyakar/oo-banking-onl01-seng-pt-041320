@@ -21,15 +21,16 @@ class Transfer
   def valid?
     valid_flag = false
     if (sender.valid? == true && receiver.valid? == true)
-      valid_flag = true if sender.balance > amount
+      valid_flag = true
     else
       valid_flag
     end
+    valid_flag
   end
   
   def execute_transaction
     if @@all.none?{|xfer| xfer == self}
-      if self.valid? == true
+      if (self.valid? == true && sender.balance > amount) 
         @sender.withdrawl -= @amount
         @receiver.deposite += @amount
         @status = 'complete'
