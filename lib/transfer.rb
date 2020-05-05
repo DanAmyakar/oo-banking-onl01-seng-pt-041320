@@ -31,12 +31,12 @@ class Transfer
   
   def execute_transaction
     if @@all == @@all.uniq
-      if (self.valid? == true && sender.balance > amount) 
-        @sender.withdrawl(@amount)
-        @receiver.deposit(@amount)
-        @status = 'complete'
+      if (self.valid? == true && sender.balance > amount)
+        self.sender.withdrawl(@amount)
+        self.receiver.deposit(@amount)
+        self.status = 'complete'
       else
-        @status = 'rejected'
+        self.status = 'rejected'
         puts 'Transaction rejected. Please check your acount balance.'
       end
     end
