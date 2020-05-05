@@ -21,8 +21,13 @@ class Transfer
   end
   
   def execute_transaction
-    @sender.withdrawl(amount)
-    @receiver.deposit(amount)
+    self.valid?
+    if @@all.!include?{|xfer| xfer == self}
+      @sender.withdrawl(amount)
+      @receiver.deposit(amount)
+    else
+      "Transaction rejected. Please check your account balance"
+    end
   end
   
   
