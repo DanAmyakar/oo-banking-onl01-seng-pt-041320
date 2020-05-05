@@ -48,7 +48,7 @@ class Transfer
     c = @@all.last.receiver
     b.deposit(a)
     c.withdrawl(a)
-    
+    @@all.last.status = 'reversed'
   end
   
 end
