@@ -25,4 +25,6 @@ class Transfer
     @receiver.deposite(amount)
   end
   
+  
+  
 end
