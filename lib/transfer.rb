@@ -30,7 +30,7 @@ class Transfer
   end
   
   def execute_transaction
-    if @@all.none?{|xfer| xfer == self}
+    if @@all == @@all.uniq
       if (self.valid? == true && sender.balance > amount) 
         @sender.withdrawl -= @amount
         @receiver.deposite += @amount
