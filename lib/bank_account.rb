@@ -10,6 +10,11 @@ class BankAccount
     @name = name
     @balance = 1000
     @status = 'open'
+    save
+  end
+  
+  def save
+    @@all << self
   end
   
   def deposit(qnty_to_deposite)
