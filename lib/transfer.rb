@@ -23,6 +23,8 @@ class Transfer
   end
   
   def execute_transaction
+    # ensures each xfer can only happen once
+    # must valid? both accounts
     
   end
   
