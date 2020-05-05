@@ -22,7 +22,7 @@ class Transfer
   
   def execute_transaction
     @sender.withdrawl(amount)
-    @receiver.deposite(amount)
+    @receiver.deposit(amount)
   end
   
   
